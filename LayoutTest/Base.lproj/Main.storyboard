@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,53 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TG9-xD-Xdw">
+                                <rect key="frame" x="276" y="35" width="51" height="31"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="TXu-hz-Qe9"/>
+                                    <constraint firstAttribute="height" constant="31" id="hVu-Mh-o9d"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="swithTouch:" destination="BYZ-38-t0r" eventType="valueChanged" id="Rbw-RX-g8O"/>
+                                </connections>
+                            </switch>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMj-3H-gG8">
+                                <rect key="frame" x="310" y="86" width="270" height="494"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.53333333329999999" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pq2-t4-dey">
+                                <rect key="frame" x="20" y="86" width="270" height="494"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.95204069950000003" green="1" blue="0.21743706099999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NMj-3H-gG8" firstAttribute="leading" secondItem="pq2-t4-dey" secondAttribute="trailing" constant="20" id="6Kg-uF-jX5"/>
+                            <constraint firstAttribute="trailing" secondItem="NMj-3H-gG8" secondAttribute="trailing" priority="750" constant="20" id="DSP-hF-Qj6"/>
+                            <constraint firstItem="pq2-t4-dey" firstAttribute="top" secondItem="TG9-xD-Xdw" secondAttribute="bottom" constant="20" id="Ojk-PO-BE9"/>
+                            <constraint firstItem="TG9-xD-Xdw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="T4B-Ma-zvD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pq2-t4-dey" secondAttribute="trailing" priority="750" constant="20" id="UPN-34-NpD"/>
+                            <constraint firstItem="pq2-t4-dey" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="WHy-P8-3cf"/>
+                            <constraint firstItem="TG9-xD-Xdw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zj9-el-en9"/>
+                            <constraint firstItem="NMj-3H-gG8" firstAttribute="top" secondItem="TG9-xD-Xdw" secondAttribute="bottom" constant="20" id="hes-N7-OQj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NMj-3H-gG8" secondAttribute="bottom" constant="20" id="imN-dz-5wj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pq2-t4-dey" secondAttribute="bottom" constant="20" id="qK6-fq-oy2"/>
+                            <constraint firstItem="NMj-3H-gG8" firstAttribute="width" secondItem="pq2-t4-dey" secondAttribute="width" id="yca-WR-xpY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="_blueViewConstrain" destination="DSP-hF-Qj6" id="nNE-Ti-kj2"/>
+                        <outlet property="_switch" destination="TG9-xD-Xdw" id="oz7-5r-Zz2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="400" y="354"/>
         </scene>
     </scenes>
 </document>

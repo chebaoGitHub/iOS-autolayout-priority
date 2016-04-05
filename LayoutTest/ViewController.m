@@ -8,7 +8,15 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController (){
+    
+    __weak IBOutlet UISwitch *_switch;
+    
+    __weak IBOutlet NSLayoutConstraint *_blueViewConstrain;
+
+    
+    
+}
 
 @end
 
@@ -17,7 +25,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self changeTheConstrain];
 }
+
+
+
+- (void)changeTheConstrain{
+    if (_switch.isOn) {
+        _blueViewConstrain.priority = UILayoutPriorityDefaultHigh + 1;
+    }else{
+        _blueViewConstrain.priority = UILayoutPriorityDefaultHigh - 1;
+    }
+}
+
+
+- (IBAction)swithTouch:(UISwitch *)sender {
+    
+    
+    [self.view layoutIfNeeded];
+    [UIView animateWithDuration:1 animations:^{
+        [self changeTheConstrain];
+        [self.view layoutIfNeeded];
+    }];
+    
+    
+    NSLog(@"%d",sender.isOn);
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
